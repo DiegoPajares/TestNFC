@@ -38,10 +38,13 @@ var app = {
             // Read NDEF formatted NFC Tags
             nfc.addNdefListener(
                 function (nfcEvent) {
-                    var tag = nfcEvent.tag,
+                    /*var tag = nfcEvent.tag,
                         ndefMessage = tag.ndefMessage;                    
                     alert(JSON.stringify(ndefMessage));
-                    alert(nfc.bytesToString(ndefMessage[0].payload).substring(3));
+                    alert(nfc.bytesToString(ndefMessage[0].payload).substring(3));*/
+                    var tag = nfcEvent.tag;
+                    var tagId = nfc.bytesToHexString(tag.id);
+                    alert(tagId);
                 },
                 function () { // success callback
                     alert("Waiting for NDEF tag");
