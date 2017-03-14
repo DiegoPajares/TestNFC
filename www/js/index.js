@@ -40,7 +40,7 @@ var app = {
                 function (nfcEvent) {
                     var tag = nfcEvent.tag,
                         ndefMessage = tag.ndefMessage;
-                    alert(tag);    
+                    alert(tag.ndefMessage);    
                     //alert(JSON.stringify(ndefMessage));
                     //alert(nfc.bytesToString(ndefMessage[0].payload).substring(3));
                 },
